@@ -1,0 +1,10 @@
+<p>sibling works!</p>
+<h1>{{message}}</h1>
+<button (click)="newMessage()">New Message</button>
+
+
+
+<input #newFruit type="text" placeholder="Enter a new fruit">
+<button (click)="addFruit(newFruit.value)">Add Fruit</button>
+
+<app-child [data]="fruits"></app-child>

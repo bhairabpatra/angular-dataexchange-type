@@ -4,7 +4,43 @@
       <a (click)="changeFromParent()" class="btn btn-success">+</a>
     </div>
     <div class="col-md-12">
-      <app-child [childMessage]=data></app-child>
+      <app-child [childMessage]=data (messageEvent)="receiveMessage($event)"></app-child>
     </div>
   </div>
+
+
+
+<h2>List of Customers</h2>
+
+<table class='table'>
+  <thead>
+    <tr>
+      <th>No</th>
+      <th>Name</th>
+      <th>Address</th>
+      <th>City</th>
+      <th>State</th>
+      <th>Country</th>
+      <th>Edit</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let customer of customers">
+      <td>{{customer.customerNo}}</td>
+      <td>{{customer.name}}</td>
+      <td>{{customer.address}}</td>
+      <td>{{customer.city}}</td>
+      <td>{{customer.state}}</td>
+      <td>{{customer.country}}</td>
+      <td><button (click)="showDetails(customer)">Edit</button></td>
+    </tr>
+  </tbody>
+</table>
 </div>
+
+{{message}}
+
+<hr>
+<h2>Child to Parent: Sharing Data via ViewChild</h2>
+Message: {{ cmessage }}
+<app-child></app-child>

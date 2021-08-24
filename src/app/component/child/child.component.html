@@ -4,3 +4,13 @@
 </h2>
 
 <button class="" (click)="changeFromChild()" class="btn btn-primary">-</button>
+
+<br>
+<button (click)="sendMessage()"  class="btn btn-primary mt-5">Send Message</button>
+
+
+
+<h1>Fruit List</h1>
+<ul>
+  <li *ngFor="let item of data">{{item}}</li>
+</ul>

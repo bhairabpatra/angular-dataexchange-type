@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ChildComponent } from './component/child/child.component';
 import { ParentComponent } from './component/parent/parent.component';
+import { DataService } from './data.service';
+import { SiblingComponent } from './sibling/sibling.component';
 
 
 
@@ -12,14 +14,15 @@ import { ParentComponent } from './component/parent/parent.component';
   declarations: [
     AppComponent,
     ChildComponent,
-    ParentComponent
+    ParentComponent,
+    SiblingComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
 
   ],
-  providers: [],
+  providers: [DataService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
